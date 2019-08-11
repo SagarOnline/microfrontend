@@ -15,4 +15,12 @@ export class TabElementComponent implements OnInit {
   ngOnInit() {
   }
 
+  showHome(){
+    this.tabSelected.emit('home');
+  }
+
+  showNews(){
+    this.tabSelected.emit('news');
+  }
+
 }
