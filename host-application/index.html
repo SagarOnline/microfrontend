@@ -15,6 +15,10 @@
     <!-- bundles for Home Element -->
     <script src="http://localhost:9002/home-component/main-es2015.js" type="module"></script>
     <script src="http://localhost:9002/home-component/main-es5.js" nomodule defer></script>
+
+    <!-- bundles for News Element -->
+    <script src="http://localhost:9003/news-component/main-es2015.js" type="module"></script>
+    <script src="http://localhost:9003/news-component/main-es5.js" nomodule defer></script>
     
     <style>
       .tabcontent {
@@ -44,11 +48,23 @@
               homeElement.remove();
           }
 
+          const newsElement = document.getElementById("news-element");
+          if(newsElement){
+              newsElement.remove();
+          }
+
+          const mainContentElement = document.getElementById("main-content");
           if(e.detail === 'home'){
-              const mainContentElement = document.getElementById("main-content");
+              
               const homeElement = document.createElement("home-element");
               homeElement.setAttribute("id", "home-element");
               mainContentElement.appendChild(homeElement);
+          }
+
+          if(e.detail === 'news'){
+              const newsElement = document.createElement("news-element");
+              newsElement.setAttribute("id", "news-element");
+              mainContentElement.appendChild(newsElement);
           }
           
       }
