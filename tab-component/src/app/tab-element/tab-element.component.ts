@@ -8,6 +8,8 @@ import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@ang
 })
 export class TabElementComponent implements OnInit {
 
+  selectedMenu:string;
+
   @Output() tabSelected: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
@@ -17,10 +19,12 @@ export class TabElementComponent implements OnInit {
 
   showHome(){
     this.tabSelected.emit('home');
+    this.selectedMenu = 'home';
   }
 
   showNews(){
     this.tabSelected.emit('news');
+    this.selectedMenu = 'news';
   }
 
 }

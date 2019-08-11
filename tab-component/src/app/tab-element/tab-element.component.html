@@ -1,2 +1,4 @@
-<button class="tablink" (click)="showHome()">Home</button>
-<button class="tablink" (click)="showNews()">News</button>
+<div class="menubar">
+<button [ngClass]="{'active':selectedMenu === 'home', 'tablink':true}" (click)="showHome()">Home</button>
+<button [ngClass]="{'active':selectedMenu === 'news', 'tablink':true}" (click)="showNews()">News</button>
+</div>
