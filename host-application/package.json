@@ -1,0 +1,11 @@
+{
+  "name": "host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "static-server -p 8000 --cors='*'"
+  },
+  "author": "",
+  "license": "ISC"
+}
