@@ -8,14 +8,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
 
+    <!-- bundles for Tab Element -->
     <script src="http://localhost:9001/tab-component/main-es2015.js" type="module"></script>
     <script src="http://localhost:9001/tab-component/main-es5.js" nomodule defer></script>
+
+    <!-- bundles for Home Element -->
+    <script src="http://localhost:9002/home-component/main-es2015.js" type="module"></script>
+    <script src="http://localhost:9002/home-component/main-es5.js" nomodule defer></script>
     
     <style>
       .tabcontent {
         color: white;
-        display: none;
-        padding: 100px 20px;
+        padding: 28px 0px;
         height: 100%;
       }
     
@@ -33,10 +37,20 @@
       const tabElement = document.getElementById("tab-element");
       tabElement.addEventListener('tabSelected', (e) => {
           console.log("Log from Host : Home Tab Selected"+ e.detail)
-          const mainContentElement = document.getElementById("main-content");
-          const homeElement = document.createElement("tab-element");
 
-          mainContentElement.appendChild(homeElement);
+          //clean tab content
+          const homeElement = document.getElementById("home-element");
+          if(homeElement){
+              homeElement.remove();
+          }
+
+          if(e.detail === 'home'){
+              const mainContentElement = document.getElementById("main-content");
+              const homeElement = document.createElement("home-element");
+              homeElement.setAttribute("id", "home-element");
+              mainContentElement.appendChild(homeElement);
+          }
+          
       }
       );
         
