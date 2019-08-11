@@ -11,11 +11,36 @@
     <script src="http://localhost:9001/tab-component/main-es2015.js" type="module"></script>
     <script src="http://localhost:9001/tab-component/main-es5.js" nomodule defer></script>
     
+    <style>
+      .tabcontent {
+        color: white;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+      }
+    
+    </style>
 </head>
 <body>
     
     
-  <tab-element></tab-element>
-  <!--<hello-element></hello-element>-->
+  <tab-element id="tab-element"></tab-element>
+  <div id="main-content" class="tabcontent">
+
+  </div>
+
+  <script>
+      const tabElement = document.getElementById("tab-element");
+      tabElement.addEventListener('tabSelected', (e) => {
+          console.log("Log from Host : Home Tab Selected"+ e.detail)
+          const mainContentElement = document.getElementById("main-content");
+          const homeElement = document.createElement("tab-element");
+
+          mainContentElement.appendChild(homeElement);
+      }
+      );
+        
+    </script>
+ 
 </body>
 </html>
