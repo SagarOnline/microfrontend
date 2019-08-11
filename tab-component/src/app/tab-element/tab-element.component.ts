@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tab-element',
@@ -7,6 +7,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class TabElementComponent implements OnInit {
+
+  @Output() tabSelected: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 

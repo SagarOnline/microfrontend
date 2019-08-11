@@ -14,10 +14,14 @@ import { TabElementComponent } from './tab-element/tab-element.component';
     BrowserModule
   ],
   providers: [],
+  
   bootstrap: [],
   entryComponents: [AppComponent, TabElementComponent],
+  //bootstrap: [AppComponent],
+  //entryComponents: [TabElementComponent],
 })
 export class AppModule {
+  
   constructor(private injector: Injector) {}
 
   ngDoBootstrap(): void {
@@ -31,4 +35,5 @@ export class AppModule {
     customElements.define('tab-element', ngCustomElement);
 
   }
+  
  }
