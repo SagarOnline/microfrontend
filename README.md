@@ -3,7 +3,7 @@ Recently, microservices architectural style is being widely adopted in applicati
 
 I have implemented some examples in this repository to demonstrate the concept of microfrontend implementation. These are explained in section [How to implement Micro Frontend](#How-to-implement-Micro-Frontend) . If you already know the concepts, then you can directly jump to this section. 
 
-I have taken the reference from following resources to explain the Micro Frontend concepts. I tried to keep the explaination minimal because these concepts are already explained in details at below links. I highly recommend to go through above resources.
+I have taken the reference from following resources to explain the Micro Frontend concepts. I tried to keep the explaination minimal because these concepts are already explained in details here. I highly recommend to go through these resources.
 
 * [micro-frontends.org](https://micro-frontends.org/)
 * Martin Fowler's blog on [microfrontend](https://martinfowler.com/articles/micro-frontends.html)
