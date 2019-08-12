@@ -1,14 +1,16 @@
 # Micro Frontend
 Recently, microservices architectural style is being widely adopted in applications because of the benefits provided by it. Many such applications which also deal with UI, (along with microservices), usually do not apply these architecture principles to the UI. This many times limit the application's capability to take full benefit of microservice architecture. Micro frontend extend the microservice architecture concept to UI helping oragnizations to build end-to-end teams owning the delivery of module from UI till database. 
 
-This repository have some examples to demonstrate the concept of microfrontend implementation. I have taken the reference from following resources to develope the content available in this repository. 
+I have implemented some examples in this repository to demonstrate the concept of microfrontend implementation. These are explained in section [How to implement Micro Frontend](#How-to-implement-Micro-Frontend) . If you already know the concepts, then you can directly jump to this section. 
+
+I have taken the reference from following resources to explain the Micro Frontend concepts. 
 
 * [micro-frontends.org](https://micro-frontends.org/)
 * Martin Fowler's blog on [microfrontend](https://martinfowler.com/articles/micro-frontends.html)
 * Stefan Tilkov's presentation from [Microservices conference 2016, Berlin](https://www.youtube.com/watch?v=pU1gXA0rfwc)
 * [Micro Frontends in Action](https://www.manning.com/books/micro-frontends-in-action)
 
-I highly recommend to go through above resources as these concepts are very well explained in details there. Below sections mainly cover various aspects of the micro frontend implementations with examples. But to set the context, few concepts are also explained in short in below sections. 
+I highly recommend to go through above resources as these concepts are very well explained in details there.
 
 ## Problem with UI monolith
 Usually UI is built as fat monolith which consume the backend microservices. 
@@ -45,7 +47,36 @@ Similar to microservices, applications are not always adivced to implement micro
 * If your application have many functional modules and tend to increase coupling between them
 * If you different scallability requirement across various modules
   
-  
-How to implement it ?
+## Things to consider while developing Micro Frontends
+
+### Be Technology Agnostic
+Each team should be able to choose and upgrade their stack without having to coordinate with other teams. Custom Elements are a great way to hide implementation details while providing a neutral interface to others.
+
+### Isolate Team Code
+Don’t share a runtime, even if all teams use the same framework. Build independent apps that are self contained. Don’t rely on shared state or global variables.
+
+### Establish Team Prefixes
+Agree on naming conventions where isolation is not possible yet. Namespace CSS, Events, Local Storage and Cookies to avoid collisions and clarify ownership. 
+
+### Favor Native Browser Features over Custom APIs
+Use Browser Events for communication instead of building a global PubSub system. If you really have to build a cross team API, try keeping it as simple as possible.
+
+### Build a Resilient Site
+Your feature should be useful, even if JavaScript failed or hasn’t executed yet. Use Universal Rendering and Progressive Enhancement to improve perceived performance.
+
+## How to implement Micro Frontend
+
+There are below strategies to integrate micro frontends in application. Each strategy have their own benefits and trade-offs.
+
+### Server-side template composition
+
+### Build-time integration
+
+### Run-time integration via iframes
+
+### Run-time integration via JavaScript
+
+### Run-time integration via Web Components
+
 
 
