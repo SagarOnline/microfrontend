@@ -3,19 +3,19 @@ Recently, microservices architectural style is being widely adopted in applicati
 
 I have implemented some examples in this repository to demonstrate the concept of microfrontend implementation. These are explained in section [How to implement Micro Frontend](#How-to-implement-Micro-Frontend) . If you already know the concepts, then you can directly jump to this section. 
 
-I have taken the reference from following resources to explain the Micro Frontend concepts. 
+I have taken the reference from following resources to explain the Micro Frontend concepts. I tried to keep the explaination minimal because these concepts are already explained in details at below links. I highly recommend to go through above resources.
 
 * [micro-frontends.org](https://micro-frontends.org/)
 * Martin Fowler's blog on [microfrontend](https://martinfowler.com/articles/micro-frontends.html)
 * Stefan Tilkov's presentation from [Microservices conference 2016, Berlin](https://www.youtube.com/watch?v=pU1gXA0rfwc)
 * [Micro Frontends in Action](https://www.manning.com/books/micro-frontends-in-action)
 
-I highly recommend to go through above resources as these concepts are very well explained in details there.
+Main focus of this repository is to explain concepts through implementations.
 
 ## Problem with UI monolith
-Usually UI is built as fat monolith which consume the backend microservices. 
-* Often implementing the enhancement also involve changes in UI along with backend microservices. Rolling out a change in monolith UI is difficult as it involves communication with other teams. 
-* UI fuctionalities are highly coupled with other, making them difficult to test
+Usually UI is built as a fat monolith which in turn consume the backend microservices. 
+* Often implementing the enhancements (or change requests) involve changes in UI along with corresponding backend microservices. Rolling out a change in monolith UI is difficult as it involves communication with other teams which also shares the same UI codebase. 
+* UI fuctionalities are highly coupled with other, making them difficult to test.
 * Upgrading to use new features in UI technologies is difficult as it could affect whole application.
 
 
@@ -34,18 +34,21 @@ Below are major benefits of micro frontends
 * **Autonomous teams** : Organizations can build teams focussing on implementing specific functionality from UI to backend.
 
 
-## Benefits of micro frontend explained with Examples
+## Few real world Examples
 
-* Self service functionality
-* Evaluating new feature in angular 8
-* Freedom of technology
-* Marketdata component which lists Equity Indices needs to be displayed in public application as well as some internal application
-* 
+* Consider your application is on Angular 5 and you need to evaluate a new feature supported by latest version of Angular. It would be difficult to achieve this in monolith UI. Instead if you have microfrontend, you can evailulate it on leas used component.
+
+* Consider a Makretdata application which provides the 'Equity Indices' widget. This widget might needs to be integrated in Public facing application as well as Internal application used by internal employees. If such functionality is built as micro frontend then it can easily be integrated in any Host application. (There might be different styling requirements for each application, but it can also be handled)
+  
+* Consider a "Self Service" functionality such as "Changing an email address". Such functionality might need to be invoked from different modules. Imlpementing such functionality in UI monlith could easily increase the coupling between them. However in microfrontend this coupling can be removed through Event Handling. 
+
+* There is no "One fits all" solution in Software. Micro frontend helps team to use framework which suites to their module.
+  
 
 ## When to have microfrontend ?
-Similar to microservices, applications are not always adivced to implement micro frontends. It depends on many factors such as 
+Similar to microservices, applications are not always adviced to implement micro frontends. It depends on many factors such as 
 * If your application have many functional modules and tend to increase coupling between them
-* If you different scallability requirement across various modules
+* If you different scalability requirement across various modules
   
 ## Things to consider while developing Micro Frontends
 
