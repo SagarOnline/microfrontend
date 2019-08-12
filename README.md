@@ -68,6 +68,10 @@ Your feature should be useful, even if JavaScript failed or hasn’t executed ye
 
 There are below strategies to integrate micro frontends in application. Each strategy have their own benefits and trade-offs.
 
+### Run-time integration via Web Components
+In this strategy, micro frontends leverate the HTML Web Component technology to integrate and communicate with each others.
+The example of this strategy in explained in details at [Runtime Integration with Web Components](web-component-integration/README.md)
+
 ### Server-side template composition
 
 ### Build-time integration
@@ -76,7 +80,7 @@ There are below strategies to integrate micro frontends in application. Each str
 
 ### Run-time integration via JavaScript
 
-### Run-time integration via Web Components
+
 
 
 
