@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && cd dist && static-server -p 9002 --cors='*'",
+    "start": "npm run build && cd dist && static-server -p 9002 --cors=*",
     "build": "ng build --prod  --output-hashing none --single-bundle true",
     "test": "ng test",
     "lint": "ng lint",

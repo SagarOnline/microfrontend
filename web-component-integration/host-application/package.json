@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "static-server -p 8000 --cors='*'"
+    "start": "static-server -p 8000 --cors=*"
   },
   "author": "",
   "license": "ISC"

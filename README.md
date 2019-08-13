@@ -9,6 +9,7 @@ I have taken the reference from following resources to explain the Micro Fronten
 * Martin Fowler's blog on [microfrontend](https://martinfowler.com/articles/micro-frontends.html)
 * Stefan Tilkov's presentation from [Microservices conference 2016, Berlin](https://www.youtube.com/watch?v=pU1gXA0rfwc)
 * [Micro Frontends in Action](https://www.manning.com/books/micro-frontends-in-action)
+* Few more resources listed on this [Github Project](https://github.com/rajasegar/awesome-micro-frontends)
 
 Main focus of this repository is to explain concepts through implementations.
 
