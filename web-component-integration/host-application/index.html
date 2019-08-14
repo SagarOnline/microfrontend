@@ -22,7 +22,7 @@
     
     <style>
       .tabcontent {
-        color: white;
+        background-color:lightyellow;
         padding: 28px 0px;
         height: 100%;
       }
@@ -58,12 +58,14 @@
               
               const homeElement = document.createElement("home-element");
               homeElement.setAttribute("id", "home-element");
+              homeElement.style.padding = "10px";
               mainContentElement.appendChild(homeElement);
           }
 
           if(e.detail === 'news'){
               const newsElement = document.createElement("news-element");
               newsElement.setAttribute("id", "news-element");
+              newsElement.style.padding = "10px";
               mainContentElement.appendChild(newsElement);
           }
           
