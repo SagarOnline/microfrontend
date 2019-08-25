@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+
+    <!-- bundles for Tab Element -->
+    <script src="http://localhost:9001/tab-component/main-es2015.js" type="module"></script>
+    <script src="http://localhost:9001/tab-component/main-es5.js" nomodule defer></script>
+
+    <!-- bundles for Home Element -->
+    <script src="http://localhost:9002/home-component/main-es2015.js" type="module"></script>
+    <script src="http://localhost:9002/home-component/main-es5.js" nomodule defer></script>
+
+    <!-- bundles for News Element -->
+    <script src="http://localhost:9003/news-component/main-es2015.js" type="module"></script>
+    <script src="http://localhost:9003/news-component/main-es5.js" nomodule defer></script>
+    
+    <style>
+      .tabcontent {
+        background-color:lightyellow;
+        padding: 28px 0px;
+        height: 100%;
+      }
+    
+    </style>
+</head>
+<body>
+    
+    
+  <tab-element id="tab-element"></tab-element>
+  <div id="main-content" class="tabcontent">
+
+  </div>
+
+  <script>
+      const tabElement = document.getElementById("tab-element");
+      tabElement.addEventListener('tabSelected', (e) => {
+          console.log("Log from Host : Home Tab Selected"+ e.detail)
+
+          //clean tab content
+          const homeElement = document.getElementById("home-element");
+          if(homeElement){
+              homeElement.remove();
+          }
+
+          const newsElement = document.getElementById("news-element");
+          if(newsElement){
+              newsElement.remove();
+          }
+
+          const mainContentElement = document.getElementById("main-content");
+          if(e.detail === 'home'){
+              
+              const homeElement = document.createElement("home-element");
+              homeElement.setAttribute("id", "home-element");
+              homeElement.style.padding = "10px";
+              mainContentElement.appendChild(homeElement);
+          }
+
+          if(e.detail === 'news'){
+              const newsElement = document.createElement("news-element");
+              newsElement.setAttribute("id", "news-element");
+              newsElement.style.padding = "10px";
+              mainContentElement.appendChild(newsElement);
+          }
+          
+      }
+      );
+        
+    </script>
+ 
+</body>
+</html>

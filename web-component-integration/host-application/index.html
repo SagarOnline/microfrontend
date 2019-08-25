@@ -1,78 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apple Iphone7 Gold</title>
 
-    <!-- bundles for Tab Element -->
-    <script src="http://localhost:9001/tab-component/main-es2015.js" type="module"></script>
-    <script src="http://localhost:9001/tab-component/main-es5.js" nomodule defer></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
-    <!-- bundles for Home Element -->
-    <script src="http://localhost:9002/home-component/main-es2015.js" type="module"></script>
-    <script src="http://localhost:9002/home-component/main-es5.js" nomodule defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 
-    <!-- bundles for News Element -->
-    <script src="http://localhost:9003/news-component/main-es2015.js" type="module"></script>
-    <script src="http://localhost:9003/news-component/main-es5.js" nomodule defer></script>
-    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <style>
-      .tabcontent {
-        background-color:lightyellow;
-        padding: 28px 0px;
-        height: 100%;
-      }
-    
+        /* Styles on Main page*/
+        .product{
+            padding: 15px;
+        }
+
+        /* Styles on product info*/
+        .preview-pic {
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+        }
+
+        .preview-thumbnail.nav-tabs {
+            border: none;
+            margin-top: 15px;
+        }
+
+        .preview-thumbnail.nav-tabs li {
+            width: 15%;
+            margin-right: 1%;
+        }
+
+        .preview-thumbnail.nav-tabs li img {
+            max-width: 50%;
+            display: block;
+        }
+
+        .preview-thumbnail.nav-tabs li a {
+            padding: 0;
+            margin: 0;
+        }
+
+        .preview-thumbnail.nav-tabs li:last-of-type {
+            margin-right: 0;
+        }
+
+        .tab-content {
+            overflow: hidden;
+        }
+
+        .tab-content img {
+            max-width: 600px;
+            max-height: 600px;
+            -webkit-animation-name: opacity;
+            animation-name: opacity;
+            -webkit-animation-duration: .3s;
+            animation-duration: .3s;
+        }
+
+        .product-title,
+        .price,
+        .sizes,
+        .colors {
+            text-transform: UPPERCASE;
+            font-weight: bold;
+        }
+
+        .checked,
+        .price span {
+            color: #ff9f1a;
+        }
+
+        .product-title,
+        .rating,
+        .product-description,
+        .price,
+        .vote,
+        .sizes,
+        .add {
+            margin-bottom: 15px;
+        }
+
+
+
+        /* Styles on checkout container*/
+
+        .checkout-container{
+            display: block;
+            border: 1px;
+            border-color: gray;
+            border-style: solid;
+            padding: 20px;
+
+        }
     </style>
+
 </head>
+
 <body>
-    
-    
-  <tab-element id="tab-element"></tab-element>
-  <div id="main-content" class="tabcontent">
+    <div class="container-fluid product">
+        <div class="row">
+            <div class="col-md-5">
+                <!--Image-->
 
-  </div>
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane active" id="pic-1"><img src="img/iphone7_1.jpg" /></div>
+                    <div class="tab-pane" id="pic-2"><img src="img/iphone7_2.jpg" /></div>
+                    <div class="tab-pane" id="pic-3"><img src="img/iphone7_3.jpg" /></div>
+                    <div class="tab-pane" id="pic-4"><img src="img/iphone7_4.jpg" /></div>
+                </div>
+                <ul class="preview-thumbnail nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#pic-1" data-toggle="tab"><img
+                                src="img/iphone7_1_preview.jpg" /></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pic-2" data-toggle="tab"><img
+                                src="img/iphone7_2_preview.jpg" /></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pic-3" data-toggle="tab"><img
+                                src="img/iphone7_3_preview.jpg" /></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pic-4" data-toggle="tab"><img
+                                src="img/iphone7_4_preview.jpg" /></a></li>
+                </ul>
 
-  <script>
-      const tabElement = document.getElementById("tab-element");
-      tabElement.addEventListener('tabSelected', (e) => {
-          console.log("Log from Host : Home Tab Selected"+ e.detail)
+            </div>
 
-          //clean tab content
-          const homeElement = document.getElementById("home-element");
-          if(homeElement){
-              homeElement.remove();
-          }
+            <div class="col-md-5">
+                <!--details-->
 
-          const newsElement = document.getElementById("news-element");
-          if(newsElement){
-              newsElement.remove();
-          }
+                <h3 class="product-title">Apple iPhone 7 (64GB) - Gold</h3>
+                <div class="rating">
+                    <div class="stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="review-no">41 reviews</span>
+                </div>
 
-          const mainContentElement = document.getElementById("main-content");
-          if(e.detail === 'home'){
-              
-              const homeElement = document.createElement("home-element");
-              homeElement.setAttribute("id", "home-element");
-              homeElement.style.padding = "10px";
-              mainContentElement.appendChild(homeElement);
-          }
+                <ul>
+                    <li>4.7-inch Retina HD display</li>
+                    <li>IP67 water and dust resistant (maximum depth of 1 meter up to 30 minutes)</li>
+                    <li>12MP camera and 4K video</li>
+                    <li>7MP FaceTime HD camera with Retina Flash</li>
+                    <li>Touch ID for secure authentication</li>
+                    <li>A10 Fusion chip</li>
+                    <li>iOS 12 with Screen Time, Group FaceTime, and even faster performance</li>
+                </ul>
+               <div class="add">
+                    <h4 class="price">current price: <span>$ 666</span></h4>
+                    <button type="button" class="btn btn-info">Add to Cart</button>
+                </div>
+                
+                <p>Available in Size : </p>
+                <div class="btn-group btn-group-lg">
+                    <button type="button" class="btn btn-outline-info" autofocus="autofocus">64GB </button>
+                    <button type="button" class="btn btn-outline-info">128GB</button>
+                        
+                </div>
+            </div>
 
-          if(e.detail === 'news'){
-              const newsElement = document.createElement("news-element");
-              newsElement.setAttribute("id", "news-element");
-              newsElement.style.padding = "10px";
-              mainContentElement.appendChild(newsElement);
-          }
-          
-      }
-      );
-        
-    </script>
- 
+            <div class="col-md-2">
+                <!--checkout-->
+                <div class="checkout-container">
+                    <p>Your Shopping Cart</p>
+
+                    <p>Cart Subtotal (0 items) : $ 0</p>
+
+                    
+                    <p>Price : $ 666</p>
+
+                    <button type="button" class="btn btn-success">Checkout</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </body>
+
 </html>
