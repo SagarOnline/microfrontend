@@ -21,7 +21,38 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <style>
+
+        /*
+        Styles on page header
+        */
+        .header{
+            background-color:black;
+            height: 80px;
+            padding: 5px;
+
+        }
+
+        .header .logo{
+            color: white;
+            text-align: left;
+
+        }
+
+        .header .profile{
+            color: white;
+            text-align: left;
+            font-weight: bold;
+
+        }
+
         /* Styles on Main page*/
+
+        .content{
+            
+            margin-top: 10px;
+
+        }
+
         .product{
             padding: 15px;
         }
@@ -111,8 +142,30 @@
 </head>
 
 <body>
+    
     <div class="container-fluid product">
-        <div class="row">
+        <div class="row header">
+            <div class="col-md-2 mt-3">
+                <h3 class="logo">MyShop.com</h3>
+            </div>
+
+            <div class="col-md-8">
+                    <div class="input-group mb-3 mt-3">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit">Go</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-2">
+                <div class="profile mt-2">
+                    <h6>Welcome Sagar !</h6>
+                    <h6>Your Shopping Cart : </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row content">
             <div class="col-md-5">
                 <!--Image-->
 

@@ -1,3 +1,6 @@
 /.metadata/
 micro-frontends-with-web-components
 AngularInAngular
+node_modules
+sample-app
+package-lock.json
