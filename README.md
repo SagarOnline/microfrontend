@@ -49,7 +49,7 @@ Below are major benefits of micro frontends
 ## When to have microfrontend ?
 Similar to microservices, applications are not always adviced to implement micro frontends. It depends on many factors such as 
 * If your application have many functional modules and tend to increase coupling between them
-* If you different scalability requirement across various modules
+* If you different scalability requirement across various modules.
   
 ## Things to consider while developing Micro Frontends
 
